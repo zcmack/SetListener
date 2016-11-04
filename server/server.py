@@ -52,6 +52,8 @@ if __name__ == '__main__':
                                 'log.error_file': 'site.log',
                                 'log.screen': True})
 
-    conf = webtools.get_export_map_for_directory("static")
+    conf = webtools.get_export_map_for_directory(current_dir)
+    print conf
     cherrypy.quickstart(SetlistServer(config), '/SetlistServer', config=conf)
+
 
